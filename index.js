@@ -60,6 +60,7 @@ const generateTeam = () => {
             const manager = new Manager(response1.name, response1.id, response1.email, 
                 response1.role, response2.officenum);
                 team.push(manager);
+                   console.log(team)
         } 
         if (response2.addMember) {
             generateTeam();
@@ -68,7 +69,7 @@ const generateTeam = () => {
             team.forEach((team) => {
                 console.log(team);
             });
-            fs.writeFile(outputPath, render(team), err => {
+            fs.writeFileSync(outputPath, render(team), err => {
                 if (err) {
                     throw err;
                 }   
