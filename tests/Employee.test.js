@@ -1,9 +1,8 @@
 //Team Profile Generator
-//Initilization
-//Arrange
-const name =
-const id =
-const email =
+const Employee = require("../lib/Employee");
 
-//Act
-//Assert
+//Initilization
+test("should return instance of new employee object", () => {
+        const newHire = new Employee();
+        expect(typeof newHire).toBe("object");
+    })
