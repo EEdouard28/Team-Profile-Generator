@@ -87,8 +87,9 @@ const generateTeam = () => {
         }
 
         if(response1.role === "Intern"){
-            const intern = new Intern(response1.name, response1.email, response2.school);
+            const intern = new Intern(response1.name, response1.id, response1.email, response2.school);
                 team.push(intern);
+              
         } 
 
         if (response2.addMember) {
