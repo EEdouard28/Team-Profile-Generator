@@ -6,9 +6,10 @@ header {
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bolder;
     color: white;
+    margin: auto 0;
     
 }
 
@@ -17,11 +18,14 @@ h1 {
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+    margin-top: 75px;
+    
 }
 
 .card-body {
     display: flex;
     flex-direction: column;
+    margin: auto 0;
 
 }
 
