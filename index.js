@@ -43,32 +43,60 @@ const questions = [
 const team = [];
 
 const generateTeam = () => {
-    inquirer
-    .prompt(questions)
-    .then((response1) => {
+
         inquirer
+        .prompt(questions)
+
+        .then(response1 => {
+            inquirer
+
         .prompt([
     {
-            when: () => response1.role === "Manager",
-            type: "input",
-            message: "What is their office number",
-            name: "officenum",
+        when: () => response1.role === "Manager",
+        type: "input",
+        message: "What is their office number",
+        name: "officenum",
+    },
+    {
+        when: () => response1.role === "Engineer",
+        message: "What is the GitHub username",
+        name: "github",
+    },
+    {
+        when: () => response1.role === "Intern",
+        type: "input",
+        message: "What is the school's name?",
+        name: "School",
+    },
+    {
+        type: "confirm",
+        message: "Add another team member?",
+        name: "addMember",
     },
     ])
 
     .then((response2) => {
-        if(response1.role === "Manager"){
-            const manager = new Manager(response1.name, response1.id, response1.email, 
-                response1.role, response2.officenum);
+        if(response1.role === "Manager") {
+            const manager = new Manager(response1.name, response1.id, response1.email, response1.role, response2.officenum);
                 team.push(manager);
         } 
+
+        if(response1.role === "Engineer"){
+            const engineer = new Engineer(response1.name, response1.id, response1.role, response2.github);
+                team.push(engineer);
+        }
+
+        if(response1.role === "Intern"){
+            const intern = new Intern(response1.name, response1.email, response2.school);
+                team.push(intern);
+        } 
+
         if (response2.addMember) {
             generateTeam();
-        }
-        else {
+        } else {
             team.forEach((team) => {
-                console.log(team);
             });
+            
             fs.writeFileSync(outputPath, render(team), err => {
                 if (err) {
                     throw err;
@@ -78,11 +106,10 @@ const generateTeam = () => {
         }
         });
     })
-    .catch((err) => {
-        if (err) {
-          throw err;
-        }
-      });
-  };
-
-    generateTeam();
+.catch((err) => {
+  if (err) {
+ throw err;
+ }
+ });
+        };
+generateTeam()
