@@ -19,12 +19,5 @@ test("can create office number through constructor", () => {
     expect(manager.getRole()).toBe(testValue);
 });
 
-//Initilization
-//Arrange
-//Act
-//Assert
-
-//Team Profile Generator
-
 
 

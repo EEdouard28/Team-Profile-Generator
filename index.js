@@ -1,8 +1,8 @@
 //DEPENDENCIES
 const Manager = require("./lib/Manager");
-// const Engineer = require("./lib/Engineer");
-// const Intern = require("./lib/Intern");
-// const Employee = require("./lib/Employee");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+const Employee = require("./lib/Employee");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
@@ -41,6 +41,7 @@ const questions = [
 ];
 
 const team = [];
+
 const generateTeam = () => {
     inquirer
     .prompt(questions)
@@ -56,11 +57,10 @@ const generateTeam = () => {
     ])
 
     .then((response2) => {
-        if(response1.role === Manager){
+        if(response1.role === "Manager"){
             const manager = new Manager(response1.name, response1.id, response1.email, 
                 response1.role, response2.officenum);
                 team.push(manager);
-                   console.log(team)
         } 
         if (response2.addMember) {
             generateTeam();
