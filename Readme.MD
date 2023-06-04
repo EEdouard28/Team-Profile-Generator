@@ -2,7 +2,7 @@
 
 ## Description
 
-Node.js command-line application that takes in information about employees on a software engineering team and generates an HTML webpage that displays summaries for each person.
+The Team Profile Generator is a powerful command-line application built with Node.js that enables software engineering teams to efficiently create and manage their team profiles. This application generates an HTML webpage that displays detailed summaries for each team member, including their roles, contact information, and other relevant details.
 
 ## Table of Contents
 
@@ -14,27 +14,39 @@ Node.js command-line application that takes in information about employees on a 
 - [Tests](#tests)
 - [Questions](#questions)
 
-  ## Installation
+## Installation
 
-  Install npm inquirer package and npm jest to use this application.
+To use the Team Profile Generator, follow these steps:
 
-  ## Usage
+1. Install the required dependencies by running the command `npm install` in your terminal.
+2. Ensure you have installed the npm `inquirer` package and `jest` for testing purposes.
 
-  Command line application that prompts user to input team profile for comapny.
+## Usage
 
-  ## Credits
+To utilize the Team Profile Generator:
 
-  Evince Edouard
+1. Open your terminal or command prompt.
+2. Navigate to the project directory.
+3. Run the command `node index.js` to start the application.
+4. Follow the prompts to input the necessary information about each team member, such as their name, role, and contact details.
+5. Once you have provided the required information for all team members, an HTML webpage will be generated automatically, displaying the profiles of each team member in a clean and organized format.
 
-  ## Questions
+## Credits
 
-  For any questions please email me at: evince.edouard@gmail.com
-  or Visit my Github at: http://github.com/EEdouard28
+The Team Profile Generator was developed by Evince Edouard.
 
-  ### License
+## Questions
 
-  none
+If you have any questions or need further assistance, please feel free to contact me:
 
-  ## Tests
+Email: evince.edouard@gmail.com
 
-  Npm Test.
+GitHub: [EEdouard28](http://github.com/EEdouard28)
+
+## License
+
+This project is not licensed.
+
+## Tests
+
+To run tests for the Team Profile Generator, use the command `npm test`. This will execute the predefined test suites using `jest` and ensure that the application functions as expected.
